@@ -10,8 +10,22 @@ const {Blog} = require('./models');
 const app = express();
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/views/index.html');
+app.get('/blogs', (req, res) => {
+  Blog
+  .find()
+  .limit(10)
+  .exec()
+  .then(blogs => {
+    res.json({
+      blogs: blogs.map(
+      (blog) => blog.apiRepr())
+    });
+  })
+  .catch(
+    err => {
+      console.error(err);
+      res.status(500).json({message: 'No Bueno Internal server error'});
+    });
 });
 
 
