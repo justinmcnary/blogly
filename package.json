@@ -1,0 +1,27 @@
+{
+  "name": "blogapi",
+  "version": "1.0.0",
+  "description": "Challenge: Blog API",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha ./test",
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "blog",
+    "api"
+  ],
+  "author": "JMC",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "uuid": "^3.0.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.1.2",
+    "nodemon": "^1.11.0"
+  }
+}
